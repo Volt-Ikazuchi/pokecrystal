@@ -1877,8 +1877,6 @@ BattleCommand_EffectChance:
 	ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
 
-	; BUG: 1/256 chance to fail even for a 100% effect chance,
-	; since carry is not set if BattleRandom == [hl] == 255
 	call BattleRandom
 	cp [hl]
 	pop hl
@@ -5651,11 +5649,11 @@ BattleCommand_Charge:
 	ld hl, .Solarbeam
 	jr z, .done
 
-	cp SKULL_BASH
+	cp ROCK_CLIMB
 	ld hl, .SkullBash
 	jr z, .done
 
-	cp SKY_ATTACK
+	cp BRAVE_BIRD
 	ld hl, .SkyAttack
 	jr z, .done
 
