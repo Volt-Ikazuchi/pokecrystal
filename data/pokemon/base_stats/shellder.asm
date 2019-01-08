@@ -1,9 +1,9 @@
 	db SHELLDER ; 090
 
-	db  30,  65, 100,  40,  45,  25
+	db  40,  40, 100,  40,  65,  45
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER ; type
+	db WATER, ICE ; type
 	db 190 ; catch rate
 	db 97 ; base exp
 	db PEARL, BIG_PEARL ; items

@@ -1,6 +1,6 @@
 	db KRABBY ; 098
 
-	db  30, 105,  90,  50,  25,  25
+	db  50, 100,  80,  50,  50,  30
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type

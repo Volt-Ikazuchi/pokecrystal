@@ -1,9 +1,9 @@
 	db CROBAT ; 169
 
-	db  85,  90,  80, 130,  70,  80
+	db  95,  95,  80, 130,  90,  85
 	;   hp  atk  def  spd  sat  sdf
 
-	db POISON, FLYING ; type
+	db DARK, FLYING ; type
 	db 90 ; catch rate
 	db 204 ; base exp
 	db NO_ITEM, NO_ITEM ; items

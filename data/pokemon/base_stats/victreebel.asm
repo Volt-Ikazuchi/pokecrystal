@@ -1,6 +1,6 @@
 	db VICTREEBEL ; 071
 
-	db  80, 105,  65,  70, 100,  60
+	db  90, 100,  80,  60, 105,  80
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, POISON ; type

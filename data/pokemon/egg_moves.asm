@@ -15,7 +15,7 @@ INCLUDE "data/pokemon/egg_move_pointers.asm"
 
 BulbasaurEggMoves:
 	db LIGHT_SCREEN
-	db SKULL_BASH
+	db ROCK_CLIMB
 	db SAFEGUARD
 if !_CRYSTAL
 	db CHARM
@@ -335,7 +335,7 @@ CuboneEggMoves:
 	db ANCIENTPOWER
 	db BELLY_DRUM
 	db SCREECH
-	db SKULL_BASH
+	db ROCK_CLIMB
 	db PERISH_SONG
 if _CRYSTAL
 	db SWORDS_DANCE
@@ -524,7 +524,7 @@ HoothootEggMoves:
 	db WING_ATTACK
 	db WHIRLWIND
 if _CRYSTAL
-	db SKY_ATTACK
+	db BRAVE_BIRD
 endc
 	db -1 ; end
 
@@ -651,7 +651,7 @@ MurkrowEggMoves:
 	db MIRROR_MOVE
 	db WING_ATTACK
 if _CRYSTAL
-	db SKY_ATTACK
+	db BRAVE_BIRD
 endc
 	db -1 ; end
 
@@ -785,7 +785,7 @@ SkarmoryEggMoves:
 	db PURSUIT
 	db WHIRLWIND
 if _CRYSTAL
-	db SKY_ATTACK
+	db BRAVE_BIRD
 endc
 	db -1 ; end
 

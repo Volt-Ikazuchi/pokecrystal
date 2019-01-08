@@ -1,12 +1,12 @@
 	db PICHU ; 172
 
-	db  20,  40,  15,  60,  35,  35
+	db  45,  40,  40,  65,  45,  45
 	;   hp  atk  def  spd  sat  sdf
 
 	db ELECTRIC, ELECTRIC ; type
 	db 190 ; catch rate
 	db 42 ; base exp
-	db NO_ITEM, BERRY ; items
+	db LIGHT_BALL, LIGHT_BALL ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 10 ; step cycles to hatch

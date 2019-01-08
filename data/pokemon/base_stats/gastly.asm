@@ -1,9 +1,9 @@
 	db GASTLY ; 092
 
-	db  30,  35,  30,  80, 100,  35
+	db  40,  35,  30,  95, 100,  45
 	;   hp  atk  def  spd  sat  sdf
 
-	db GHOST, POISON ; type
+	db GHOST, DARK ; type
 	db 190 ; catch rate
 	db 95 ; base exp
 	db NO_ITEM, NO_ITEM ; items

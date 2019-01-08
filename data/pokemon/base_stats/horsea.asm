@@ -1,9 +1,9 @@
 	db HORSEA ; 116
 
-	db  30,  40,  70,  60,  70,  25
+	db  30,  30,  70,  60,  70,  45
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER ; type
+	db WATER, DRAGON ; type
 	db 225 ; catch rate
 	db 83 ; base exp
 	db NO_ITEM, DRAGON_SCALE ; items

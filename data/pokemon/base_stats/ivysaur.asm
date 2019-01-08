@@ -1,6 +1,6 @@
 	db IVYSAUR ; 002
 
-	db  60,  62,  63,  60,  80,  80
+	db  75,  75,  75,  55,  85,  75
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, POISON ; type

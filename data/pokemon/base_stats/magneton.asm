@@ -1,6 +1,6 @@
 	db MAGNETON ; 082
 
-	db  50,  60,  95,  70, 120,  70
+	db  70,  60, 110,  70, 120,  80
 	;   hp  atk  def  spd  sat  sdf
 
 	db ELECTRIC, STEEL ; type

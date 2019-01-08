@@ -1,9 +1,9 @@
 	db WARTORTLE ; 008
 
-	db  59,  63,  80,  58,  65,  80
+	db  65,  65,  95,  35,  85,  95
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER ; type
+	db WATER, STEEL ; type
 	db 45 ; catch rate
 	db 143 ; base exp
 	db NO_ITEM, NO_ITEM ; items
