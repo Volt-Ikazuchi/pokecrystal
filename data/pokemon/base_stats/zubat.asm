@@ -1,9 +1,9 @@
 	db ZUBAT ; 041
 
-	db  40,  45,  35,  55,  30,  40
+	db  50,  55,  40,  80,  50,  50
 	;   hp  atk  def  spd  sat  sdf
 
-	db POISON, FLYING ; type
+	db DARK, FLYING ; type
 	db 255 ; catch rate
 	db 54 ; base exp
 	db NO_ITEM, NO_ITEM ; items

@@ -1,6 +1,6 @@
 	db SUNKERN ; 191
 
-	db  30,  30,  30,  30,  30,  30
+	db  45,  20,  40,  25,  55,  50
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, GRASS ; type
