@@ -1,6 +1,6 @@
 	db MEW ; 151
 
-	db 100, 100, 100, 100, 100, 100
+	db 110, 110, 110, 110, 110, 110
 	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC, PSYCHIC ; type

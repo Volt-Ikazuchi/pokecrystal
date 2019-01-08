@@ -1,6 +1,6 @@
 	db MILTANK ; 241
 
-	db  95,  80, 105, 100,  40,  70
+	db 105,  85, 100, 100,  45,  75
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type

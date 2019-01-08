@@ -1,6 +1,6 @@
 	db METAPOD ; 011
 
-	db  50,  20,  55,  30,  25,  25
+	db  60,  30,  65,  10,  35,  50
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, BUG ; type

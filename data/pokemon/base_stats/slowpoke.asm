@@ -1,6 +1,6 @@
 	db SLOWPOKE ; 079
 
-	db  90,  65,  65,  15,  40,  40
+	db  90,  55,  65,  10,  80,  65
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, PSYCHIC ; type
