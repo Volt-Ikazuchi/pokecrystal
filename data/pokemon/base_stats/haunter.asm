@@ -1,9 +1,9 @@
 	db HAUNTER ; 093
 
-	db  45,  50,  45,  95, 115,  55
+	db  55,  90,  45, 105, 110,  65
 	;   hp  atk  def  spd  sat  sdf
 
-	db GHOST, POISON ; type
+	db GHOST, DARK ; type
 	db 90 ; catch rate
 	db 126 ; base exp
 	db NO_ITEM, NO_ITEM ; items

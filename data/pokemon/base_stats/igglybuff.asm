@@ -1,6 +1,6 @@
 	db IGGLYBUFF ; 174
 
-	db  90,  30,  15,  15,  40,  20
+	db  95,  30,  25,  20,  40,  15
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type

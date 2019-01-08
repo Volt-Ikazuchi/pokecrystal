@@ -1,9 +1,9 @@
 	db ELECTABUZZ ; 125
 
-	db  65,  83,  57, 105,  95,  85
+	db  75,  95,  70,  95, 115, 100
 	;   hp  atk  def  spd  sat  sdf
 
-	db ELECTRIC, ELECTRIC ; type
+	db ELECTRIC, FIGHTING ; type
 	db 45 ; catch rate
 	db 156 ; base exp
 	db NO_ITEM, NO_ITEM ; items

@@ -1,9 +1,9 @@
 	db HOOTHOOT ; 163
 
-	db  60,  30,  30,  50,  36,  56
+	db  60,  40,  45,  60,  70,  60
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, FLYING ; type
+	db PSYCHIC, FLYING ; type
 	db 255 ; catch rate
 	db 58 ; base exp
 	db NO_ITEM, NO_ITEM ; items
