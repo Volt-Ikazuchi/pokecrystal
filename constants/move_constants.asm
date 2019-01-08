@@ -37,7 +37,7 @@
 	const HEADBUTT     ; 1d
 	const HORN_ATTACK  ; 1e
 	const FURY_ATTACK  ; 1f
-	const HORN_DRILL   ; 20
+	const DRILL_RUN    ; 20
 	const TACKLE       ; 21
 	const BODY_SLAM    ; 22
 	const WRAP         ; 23
@@ -57,7 +57,7 @@
 	const SONICBOOM    ; 31
 	const DISABLE      ; 32
 	const ACID         ; 33
-	const EMBER        ; 34
+	const FLARE        ; 34
 	const FLAMETHROWER ; 35
 	const MIST         ; 36
 	const WATER_GUN    ; 37
@@ -135,7 +135,7 @@
 	const WATERFALL    ; 7f
 	const CLAMP        ; 80
 	const SWIFT        ; 81
-	const SKULL_BASH   ; 82
+	const ROCK_CLIMB   ; 82
 	const SPIKE_CANNON ; 83
 	const CONSTRICT    ; 84
 	const AMNESIA      ; 85
@@ -148,7 +148,7 @@
 	const BARRAGE      ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
-	const SKY_ATTACK   ; 8f
+	const BRAVE_BIRD   ; 8f
 	const TRANSFORM    ; 90
 	const BUBBLE       ; 91
 	const DIZZY_PUNCH  ; 92

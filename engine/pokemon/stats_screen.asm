@@ -722,7 +722,7 @@ StatsScreen_LoadGFX:
 	db "MOVE@"
 
 .BluePage:
-	call .PlaceOTInfo
+	call TN_PrintDVs
 	hlcoord 10, 8
 	ld de, SCREEN_WIDTH
 	ld b, 10
@@ -1139,3 +1139,158 @@ CheckFaintedFrzSlp:
 .fainted_frz_slp
 	scf
 	ret
+
+; by Aurelio Mannara - BitBuilt 2017
+; ShockSlayer helped ( °v°)
+TN_PrintDVs:
+    ; print labels
+
+    hlcoord 3, 9
+    ld [wBuffer2], a
+    ld de, .label_DV ; DV
+    call PlaceString
+    
+    hlcoord 2, 11
+    ld [wBuffer2], a
+    ld de, .label_HP ; hp
+    call PlaceString
+    
+    hlcoord 2, 12
+    ld [wBuffer2], a
+    ld de, .label_ATK ; atk
+    call PlaceString
+    
+    hlcoord 2, 13
+    ld [wBuffer2], a
+    ld de, .label_DEF ; def
+    call PlaceString
+    
+    hlcoord 2, 14
+    ld [wBuffer2], a
+    ld de, .label_SPE ; spe
+    call PlaceString
+    
+    hlcoord 2, 15
+    ld [wBuffer2], a
+    ld de, .label_SPC ; spc
+    call PlaceString
+    
+    ; print 16 bit value of DVs
+
+    ld de, wTempMonDVs
+    ld a, [de]
+    ld b, a
+    inc de
+    ld a, [de]
+    ld c, a
+    push bc
+
+
+    ld de, wTempMonDVs
+    ld a, 0
+    ld [de], a
+    inc de
+    pop bc
+    ld a, b
+    push bc
+    and $f0
+    swap a
+    ld [de], a
+    hlcoord 6, 12 ; atk disp coords
+    lb bc, PRINTNUM_LEADINGZEROS | 2, 2
+    ld de, wTempMonDVs
+    call PrintNum
+
+    ld de, wTempMonDVs
+    ld a, 0
+    ld [de], a
+    inc de
+    pop bc
+    ld a, b
+    push bc
+    and $f
+    ld [de], a
+    hlcoord 6, 13 ; def disp coords
+    lb bc, PRINTNUM_LEADINGZEROS | 2, 2
+    ld de, wTempMonDVs
+    call PrintNum
+
+    ld de, wTempMonDVs
+    ld a, 0
+    ld [de], a
+    inc de
+    pop bc
+    ld a, c
+    push bc
+    and $f0
+    swap a
+    ld [de], a
+    hlcoord 6, 14 ; spe disp coords
+    lb bc, PRINTNUM_LEADINGZEROS | 2, 2
+    ld de, wTempMonDVs
+    call PrintNum
+
+    ld de, wTempMonDVs
+    ld a, 0
+    ld [de], a
+    inc de
+    pop bc
+    ld a, c
+    push bc
+    and $f
+    ld [de], a
+    hlcoord 6, 15 ; spc disp coords
+    lb bc, PRINTNUM_LEADINGZEROS | 2, 2
+    ld de, wTempMonDVs
+    call PrintNum
+
+    ld de, wTempMonDVs
+    ld a, 0
+    ld [de], a
+    inc de
+    pop bc
+    bit 4, b
+    jr z, .noAttackHP
+    set 3, a
+.noAttackHP
+    bit 0, b
+    jr z, .noDefenseHP
+    set 2, a
+.noDefenseHP
+    bit 4, c
+    jr z, .noSpeedHP
+    set 1, a
+.noSpeedHP
+    bit 0, c
+    jr z, .noSpecialHP
+    set 0, a
+.noSpecialHP
+    push bc
+    ld [de], a
+    hlcoord 6, 11 ; hp disp coords
+    lb bc, PRINTNUM_LEADINGZEROS | 2, 2
+    ld de, wTempMonDVs
+    call PrintNum
+
+    ld de, wTempMonDVs
+    pop bc
+    ld a, b
+    ld [de], a
+    inc de
+    ld a, c
+    ld [de], a
+
+.label_DV
+    db "DVs:@"
+.label_HP
+    db "HP@"
+.label_ATK
+    db "ATK@"
+.label_DEF
+    db "DEF@"
+.label_SPE
+    db "SPE@"
+.label_SPC
+    db "SPC@"
+    
+    ret
