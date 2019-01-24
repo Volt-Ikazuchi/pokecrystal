@@ -1,4 +1,5 @@
-This is the base for 2 hacks, Crystal is Unbreakable and Crimson Crystal. Both hacks will be compatible with Stadium Aureum, a Pokémon Stadium 2 hack.
+**This is the base for 2 hacks, Crystal is Unbreakable and Crimson Crystal. 
+Both hacks will be compatible with Stadium Aureum, a Pokémon Stadium 2 hack.**
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
