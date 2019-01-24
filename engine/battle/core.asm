@@ -3888,7 +3888,7 @@ InitBattleMon:
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
 	call ApplyStatusEffectOnPlayerStats
-	call BadgeStatBoosts
+	;call BadgeStatBoosts
 	ret
 
 BattleCheckPlayerShininess:
@@ -4157,7 +4157,7 @@ PursuitSwitch:
 	ld a, [wLastPlayerMon]
 	ld [wCurBattleMon], a
 .do_turn
-	ld a, BANK(DoPlayerTurn) ; aka BANK(DoEnemyTurn)
+	ld a, BANK(DoPlayerTurn) ; and BANK(DoEnemyTurn)
 	rst FarCall
 
 	ld a, BATTLE_VARS_MOVE
@@ -4407,7 +4407,7 @@ UseHeldStatusHealingItem:
 
 .got_pointer
 	call SwitchTurnCore
-	ld a, BANK(CalcPlayerStats) ; aka BANK(CalcEnemyStats)
+	ld a, BANK(CalcPlayerStats) ; and BANK(CalcEnemyStats)
 	rst FarCall
 	call SwitchTurnCore
 	call ItemRecoveryAnim
@@ -7265,7 +7265,7 @@ GiveExperiencePoints:
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	call ApplyStatLevelMultiplierOnAllStats
 	callfar ApplyStatusEffectOnPlayerStats
-	callfar BadgeStatBoosts
+	;callfar BadgeStatBoosts
 	callfar UpdatePlayerHUD
 	call EmptyBattleTextBox
 	call LoadTileMapToTempTileMap
