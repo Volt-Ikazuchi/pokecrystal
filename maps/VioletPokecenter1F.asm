@@ -4,6 +4,7 @@
 	const VIOLETPOKECENTER1F_GENTLEMAN
 	const VIOLETPOKECENTER1F_YOUNGSTER
 	const VIOLETPOKECENTER1F_SCIENTIST
+	const ROUTE32POKECENTER1F_FISHING_GURU
 
 VioletPokecenter1F_MapScripts:
 	db 0 ; scene scripts
@@ -13,6 +14,35 @@ VioletPokecenter1F_MapScripts:
 VioletPokecenterNurse:
 	jumpstd pokecenternurse
 
+Route32Pokecenter1FFishingGuruScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_OLD_ROD
+	iftrue .GotOldRod
+	writetext Route32Pokecenter1FFishingGuruText_Question
+	yesorno
+	iffalse .Refused
+	writetext Route32Pokecenter1FFishingGuruText_Yes
+	buttonsound
+	verbosegiveitem OLD_ROD
+	writetext Route32Pokecenter1FFishingGuruText_GiveOldRod
+	waitbutton
+	closetext
+	setevent EVENT_GOT_OLD_ROD
+	end
+
+.Refused:
+	writetext Route32Pokecenter1FFishingGuruText_No
+	waitbutton
+	closetext
+	end
+
+.GotOldRod:
+	writetext Route32Pokecenter1FFishingGuruText_After
+	waitbutton
+	closetext
+	end
+	
 VioletPokecenter1F_ElmsAideScript:
 	faceplayer
 	opentext
@@ -213,6 +243,46 @@ VioletPokecenter1FYoungsterText:
 	line "they please."
 	done
 
+Route32Pokecenter1FFishingGuruText_Question:
+	text "This is a great"
+	line "fishing spot."
+
+	para "You saw people"
+	line "fishing? How"
+	cont "about you?"
+
+	para "Would you like one"
+	line "of my RODS?"
+	done
+
+Route32Pokecenter1FFishingGuruText_Yes:
+	text "Heh, that's good"
+	line "to hear."
+
+	para "Now you're an"
+	line "angler too!"
+	done
+
+Route32Pokecenter1FFishingGuruText_GiveOldRod:
+	text "Fishing is great!"
+
+	para "If there's water,"
+	line "be it the sea or a"
+
+	para "stream, try out"
+	line "your ROD."
+	done
+
+Route32Pokecenter1FFishingGuruText_No:
+	text "Oh. That's rather"
+	line "disappointing…"
+	done
+
+Route32Pokecenter1FFishingGuruText_After:
+	text "Yo, kid. How are"
+	line "they biting?"
+	done
+	
 VioletPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -225,9 +295,10 @@ VioletPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenterNurse, -1
 	object_event  7,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGameboyKidScript, -1
 	object_event  1,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGentlemanScript, -1
 	object_event  8,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FYoungsterScript, -1
 	object_event  4,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1F_ElmsAideScript, EVENT_ELMS_AIDE_IN_VIOLET_POKEMON_CENTER
+	object_event  4,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1

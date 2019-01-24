@@ -32,8 +32,6 @@ GoldenrodCity_MapScripts:
 	return
 
 .MoveTutor:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .MoveTutorDone
 	checkitem COIN_CASE
 	iffalse .MoveTutorDisappear
 	checkcode VAR_WEEKDAY
@@ -44,6 +42,8 @@ GoldenrodCity_MapScripts:
 	return
 
 .MoveTutorAppear:
+	checkflag ENGINE_FLYPOINT_MAHOGANY
+	iffalse .MoveTutorDone
 	checkflag ENGINE_DAILY_MOVE_TUTOR
 	iftrue .MoveTutorDone
 	appear GOLDENRODCITY_MOVETUTOR

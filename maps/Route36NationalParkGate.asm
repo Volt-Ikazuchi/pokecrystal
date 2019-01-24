@@ -33,6 +33,14 @@ Route36NationalParkGate_MapScripts:
 	end
 
 .CheckIfContestRunning:
+	checkcode VAR_WEEKDAY
+	ifequal SUNDAY, .SetContestOfficer
+	ifequal MONDAY, .SetContestOfficer
+	ifequal TUESDAY, .SetContestOfficer
+	ifequal WEDNESDAY, .SetContestOfficer
+	ifequal THURSDAY, .SetContestOfficer
+	ifequal FRIDAY, .SetContestOfficer
+	ifequal SATURDAY, .SetContestOfficer
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iftrue .BugContestIsRunning
 	setscene SCENE_ROUTE36NATIONALPARKGATE_NOTHING
@@ -45,10 +53,6 @@ Route36NationalParkGate_MapScripts:
 .CheckIfContestAvailable:
 	checkevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
 	iftrue .Return
-	checkcode VAR_WEEKDAY
-	ifequal TUESDAY, .SetContestOfficer
-	ifequal THURSDAY, .SetContestOfficer
-	ifequal SATURDAY, .SetContestOfficer
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iftrue .SetContestOfficer
 	disappear ROUTE36NATIONALPARKGATE_OFFICER1
@@ -139,11 +143,6 @@ Route36NationalParkGate_MapScripts:
 	end
 
 Route36OfficerScriptContest:
-	checkcode VAR_WEEKDAY
-	ifequal SUNDAY, _ContestNotOn
-	ifequal MONDAY, _ContestNotOn
-	ifequal WEDNESDAY, _ContestNotOn
-	ifequal FRIDAY, _ContestNotOn
 	faceplayer
 	opentext
 	checkflag ENGINE_DAILY_BUG_CONTEST
@@ -232,11 +231,18 @@ Route36OfficerScriptContest:
 
 Route36Officer_ContestHasConcluded:
 	checkevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
-	iftrue .Sunstone
+	checkcode VAR_WEEKDAY
+	ifequal SUNDAY, .Sunstone
+	ifequal MONDAY, .Moonstone
+	ifequal TUESDAY, .Silverpowder
+	ifequal WEDNESDAY, .Waterstone
+	ifequal THURSDAY, .Thunderstone
+	ifequal FRIDAY, .Firestone
+	ifequal SATURDAY, .GoldBerry
 	checkevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
-	iftrue .Everstone
+	iftrue .MiracleBerry
 	checkevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
-	iftrue .GoldBerry
+	iftrue .BerryJuice
 	checkevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	iftrue .Berry
 	writetext UnknownText_0x6b32b
@@ -253,24 +259,78 @@ Route36Officer_ContestHasConcluded:
 	closetext
 	end
 
-.Everstone:
+.Moonstone:
 	writetext UnknownText_0x6b97f
 	buttonsound
-	verbosegiveitem EVERSTONE
+	verbosegiveitem MOON_STONE
 	iffalse .BagFull
-	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
+	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	closetext
 	end
-
+	
+.Silverpowder:
+	writetext UnknownText_0x6b97f
+	buttonsound
+	verbosegiveitem SILVERPOWDER
+	iffalse .BagFull
+	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
+	closetext
+	end
+	
+.Waterstone:
+	writetext UnknownText_0x6b97f
+	buttonsound
+	verbosegiveitem WATER_STONE
+	iffalse .BagFull
+	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
+	closetext
+	end
+	
+.Thunderstone:
+	writetext UnknownText_0x6b97f
+	buttonsound
+	verbosegiveitem THUNDERSTONE
+	iffalse .BagFull
+	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
+	closetext
+	end
+	
+.Firestone:
+	writetext UnknownText_0x6b97f
+	buttonsound
+	verbosegiveitem FIRE_STONE
+	iffalse .BagFull
+	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
+	closetext
+	end
+	
 .GoldBerry:
 	writetext UnknownText_0x6b97f
 	buttonsound
 	verbosegiveitem GOLD_BERRY
 	iffalse .BagFull
-	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
+	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	closetext
 	end
-
+	
+.MiracleBerry:
+	writetext UnknownText_0x6b97f
+	buttonsound
+	verbosegiveitem MIRACLEBERRY
+	iffalse .BagFull
+	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
+	closetext
+	end
+	
+.BerryJuice:
+	writetext UnknownText_0x6b97f
+	buttonsound
+	verbosegiveitem BERRY_JUICE
+	iffalse .BagFull
+	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
+	closetext
+	end
+	
 .Berry:
 	writetext UnknownText_0x6b97f
 	buttonsound

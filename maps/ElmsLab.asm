@@ -337,6 +337,11 @@ ElmAfterTheftScript:
 	buttonsound
 	writetext ElmAfterTheftText5
 	buttonsound
+	special GiveOddEgg
+	writetext GotOddEgg
+	playsound SFX_KEY_ITEM
+	waitsfx
+	setevent EVENT_GOT_ODD_EGG
 	setevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	setflag ENGINE_MAIN_MENU_MOBILE_CHOICES
 	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
@@ -1021,8 +1026,24 @@ ElmAfterTheftText5:
 	para "The closest GYM"
 	line "would be the one"
 	cont "in VIOLET CITY."
+	
+	para "Could you please"
+	line "take the Egg too?"
+
+	para "I can't hatch it"
+	line "without carrying"
+	cont "it around."
+	
+	para "Besides, it may"
+	line "hatch into a"
+	cont "helpful pokemon"
 	done
 
+GotOddEgg:
+	text "<PLAYER> received"
+	line "ODD EGG!"
+	done
+	
 ElmAfterTheftText6:
 	text "…<PLAY_G>. The"
 	line "road to the"
