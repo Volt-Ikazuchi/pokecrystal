@@ -10,8 +10,8 @@ RuinsOfAlphKabutoItemRoom_MapScripts:
 	db 0 ; callbacks
 
 RuinsOfAlphKabutoItemRoomBerry:
-	itemball GREAT_BALL
-
+	itemball LEVEL_BALL
+	
 RuinsOfAlphKabutoItemRoomPsncureberry:
 	itemball TM_HIDDEN_POWER
 
