@@ -15,77 +15,62 @@ INCLUDE "data/pokemon/egg_move_pointers.asm"
 
 BulbasaurEggMoves:
 	db LIGHT_SCREEN
-	db ROCK_CLIMB
-	db SAFEGUARD
-if !_CRYSTAL
-	db CHARM
-endc
-	db RAZOR_WIND
-	db PETAL_DANCE
+	db SYNTHESIS
+	db ANCIENTPOWER
+	db SWORDS_DANCE
 	db -1 ; end
 
 CharmanderEggMoves:
-	db BELLY_DRUM
 	db ANCIENTPOWER
-	db ROCK_SLIDE
+	db BELLY_DRUM
 	db BITE
-	db OUTRAGE
-	db BEAT_UP
+	db SWORDS_DANCE
+	db DOUBLE_EDGE
 	db -1 ; end
 
 SquirtleEggMoves:
-	db MIRROR_COAT
+	db ANCIENTPOWER
+	db BARRIER
 	db HAZE
-	db MIST
-	db CONFUSION
-	db FORESIGHT
-	db FLAIL
+	db LIGHT_SCREEN
+	db WATER_GUN
+	db MIRROR_COAT
 	db -1 ; end
 
 PidgeyEggMoves:
+	db DOUBLE_EDGE
 	db PURSUIT
-	db FAINT_ATTACK
-	db FORESIGHT
-if !_CRYSTAL
-	db STEEL_WING
-endc
+	db MIMIC
+	db RAZOR_WIND
 	db -1 ; end
 
 RattataEggMoves:
-	db SCREECH
-	db FLAME_WHEEL
-	db FURY_SWIPES
-	db BITE
-	db COUNTER
+	db AGILITY
 	db REVERSAL
+	db BEAT_UP
+	db SWORDS_DANCE
 	db -1 ; end
 
 SpearowEggMoves:
-	db FAINT_ATTACK
 	db FALSE_SWIPE
-	db SCARY_FACE
+	db RAZOR_WIND
 	db QUICK_ATTACK
-	db TRI_ATTACK
+	db SCARY_FACE
+	db DRILL_RUN
 	db -1 ; end
 
 EkansEggMoves:
-	db PURSUIT
-	db SLAM
-	db SPITE
 	db BEAT_UP
-if _CRYSTAL
-	db CRUNCH
-endc
+	db MEAN_LOOK
+	db HAZE
+	db DESTINY_BOND
 	db -1 ; end
 
 SandshrewEggMoves:
-	db FLAIL
+	db SONICBOOM
+	db DOUBLE_EDGE
+	db FALSE_SWIPE
 	db SAFEGUARD
-	db COUNTER
-	db RAPID_SPIN
-if _CRYSTAL
-	db METAL_CLAW
-endc
 	db -1 ; end
 
 NidoranFEggMoves:
@@ -481,32 +466,17 @@ DratiniEggMoves:
 	db -1 ; end
 
 ChikoritaEggMoves:
-	db VINE_WHIP
-	db LEECH_SEED
 	db COUNTER
-	db ANCIENTPOWER
-	db FLAIL
+	db CHARM
 	db SWORDS_DANCE
 	db -1 ; end
 
 CyndaquilEggMoves:
-	db FURY_SWIPES
-	db QUICK_ATTACK
-	db REVERSAL
-	db THRASH
-	db FORESIGHT
-if _CRYSTAL
 	db SUBMISSION
-endc
 	db -1 ; end
 
 TotodileEggMoves:
-	db CRUNCH
-	db THRASH
-	db HYDRO_PUMP
-	db ANCIENTPOWER
-	db RAZOR_WIND
-	db ROCK_SLIDE
+	db SUBMISSION
 	db -1 ; end
 
 SentretEggMoves:
@@ -549,11 +519,11 @@ ChinchouEggMoves:
 	db -1 ; end
 
 PichuEggMoves:
-	db REVERSAL
-	db BIDE
-	db PRESENT
+	db ZAP_CANNON
+	db SURF
+	db GROWTH
 	db ENCORE
-	db DOUBLESLAP
+	db SING
 	db -1 ; end
 
 CleffaEggMoves:
