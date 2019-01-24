@@ -1140,27 +1140,27 @@ JohtoGrassWildMons:
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 3, GEODUDE
-	db 2, ZUBAT
-	db 2, GEODUDE
+	db 4, ZUBAT
+	db 3, GEODUDE
 	db 4, GEODUDE
-	db 2, TEDDIURSA
+	db 3, TEDDIURSA
 	db 4, ZUBAT
 	db 4, DUNSPARCE
 	; day
 	db 3, GEODUDE
-	db 2, ZUBAT
+	db 4, ZUBAT
 	db 2, GEODUDE
 	db 4, GEODUDE
-	db 2, ZUBAT
+	db 3, LARVITAR
 	db 4, ZUBAT
 	db 4, DUNSPARCE
 	; nite
-	db 3, GEODUDE
-	db 2, ZUBAT
-	db 2, GEODUDE
-	db 4, GEODUDE
-	db 2, ZUBAT
+	db 3, ZUBAT
 	db 4, ZUBAT
+	db 3, GEODUDE
+	db 4, GEODUDE
+	db 3, LARVITAR
+	db 4, TEDDIURSA
 	db 4, DUNSPARCE
 
 	map_id DARK_CAVE_BLACKTHORN_ENTRANCE
@@ -1193,29 +1193,29 @@ JohtoGrassWildMons:
 	map_id ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, PIDGEY
-	db 2, SENTRET
-	db 3, PIDGEY
 	db 3, SENTRET
-	db 2, RATTATA
-	db 3, HOPPIP
+	db 3, PIDGEY
+	db 3, RATTATA
+	db 3, LEDYBA
+	db 3, PICHU
+	db 2, HOPPIP
 	db 3, HOPPIP
 	; day
-	db 2, PIDGEY
-	db 2, SENTRET
+	db 3, SENTRET
 	db 3, PIDGEY
 	db 3, SENTRET
-	db 2, RATTATA
-	db 3, HOPPIP
+	db 3, LEDYBA
+	db 3, PICHU
+	db 2, HOPPIP
 	db 3, HOPPIP
 	; nite
 	db 2, HOOTHOOT
 	db 2, RATTATA
 	db 3, HOOTHOOT
 	db 3, RATTATA
-	db 2, RATTATA
-	db 3, HOOTHOOT
-	db 3, HOOTHOOT
+	db 2, SPINARAK
+	db 3, SPINARAK
+	db 3, SPINARAK
 
 	map_id ROUTE_30
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1277,7 +1277,7 @@ JohtoGrassWildMons:
 	db 4, EKANS
 	db 5, RATTATA
 	db 7, BELLSPROUT
-	db 6, HOPPIP
+	db 6, MAREEP
 	db 7, PIDGEY
 	db 7, HOPPIP
 	db 7, HOPPIP
@@ -1285,10 +1285,10 @@ JohtoGrassWildMons:
 	db 4, EKANS
 	db 5, RATTATA
 	db 7, BELLSPROUT
-	db 6, HOPPIP
+	db 6, MAREEP
 	db 7, PIDGEY
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 7, MAREEP
+	db 7, MAREEP
 	; nite
 	db 4, WOOPER
 	db 5, RATTATA
